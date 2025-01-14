@@ -23,25 +23,6 @@ return {
         dapui.close()
       end
 
-      dap.adapters.chrome = {
-        type = "executable",
-        command = "node",
-        args = { "~/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js" },
-      }
-
-      dap.configurations.typescriptreact = { -- change to typescript if needed
-        {
-          type = "chrome",
-          request = "attach",
-          program = "${file}",
-          cwd = vim.fn.getcwd(),
-          sourceMaps = true,
-          protocol = "inspector",
-          port = 9222,
-          webRoot = "${workspaceFolder}",
-        },
-      }
-
       vim.keymap.set("n", "<Leader>db", dap.toggle_breakpoint, {})
       vim.keymap.set("n", "<Leader>dc", dap.continue, {})
     end,
