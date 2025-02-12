@@ -1,3 +1,7 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Editor settings
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -16,4 +20,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+
 require("config.lazy")
+require("config.mappings")
+
